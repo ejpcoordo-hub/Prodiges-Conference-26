@@ -1,52 +1,297 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prodiges Conférence 2026</title>
-<link rel="stylesheet" href="assets/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invitation | Conférence Prodiges</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07070b;
+      --bg-soft: #0d1020;
+      --gold: #d4af37;
+      --gold-soft: #f3df9b;
+      --text: #f6f2e8;
+      --muted: #d9d1bf;
+      --card: rgba(255,255,255,0.06);
+      --border: rgba(212, 175, 55, 0.28);
+      --shadow: 0 20px 60px rgba(0,0,0,0.45);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(212,175,55,0.18), transparent 28%),
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.06), transparent 18%),
+        radial-gradient(circle at 80% 20%, rgba(212,175,55,0.10), transparent 20%),
+        linear-gradient(180deg, #050507 0%, #0b1020 45%, #060608 100%);
+      min-height: 100vh;
+    }
+
+    .stars::before,
+    .stars::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,0.6), transparent 60%),
+        radial-gradient(1.5px 1.5px at 70% 20%, rgba(255,255,255,0.5), transparent 60%),
+        radial-gradient(2px 2px at 80% 70%, rgba(212,175,55,0.7), transparent 60%),
+        radial-gradient(1.5px 1.5px at 35% 80%, rgba(255,255,255,0.4), transparent 60%),
+        radial-gradient(2px 2px at 55% 55%, rgba(212,175,55,0.45), transparent 60%);
+      opacity: 0.7;
+    }
+
+    .container {
+      width: min(100%, 1100px);
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 70px 20px 40px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      font-size: 0.78rem;
+      color: var(--gold-soft);
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 7vw, 5.8rem);
+      font-weight: 700;
+      line-height: 0.95;
+      color: #fff8e7;
+      text-shadow: 0 0 24px rgba(212,175,55,0.22);
+    }
+
+    .subtitle {
+      margin-top: 18px;
+      font-size: 1.15rem;
+      color: var(--muted);
+    }
+
+    .theme {
+      margin-top: 8px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      color: var(--gold-soft);
+      font-style: italic;
+    }
+
+    .letter-card {
+      margin: 40px auto 28px;
+      max-width: 850px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.04));
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      overflow: hidden;
+    }
+
+    .letter-inner {
+      padding: 42px 28px;
+    }
+
+    .letter-header {
+      border-bottom: 1px solid rgba(212,175,55,0.18);
+      padding-bottom: 24px;
+      margin-bottom: 28px;
+    }
+
+    .church {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: #fff4d1;
+      margin: 0 0 8px;
+    }
+
+    .address,
+    .subject,
+    .recipient {
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .recipient { margin-top: 18px; }
+    .subject { margin-top: 12px; font-weight: 600; color: var(--gold-soft); }
+
+    .letter-body {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.42rem;
+      line-height: 1.7;
+      color: #f9f5eb;
+    }
+
+    .letter-body p { margin: 0 0 20px; }
+
+    .signature {
+      margin-top: 34px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(212,175,55,0.15);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin: 20px auto 34px;
+      max-width: 850px;
+    }
+
+    .info-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .info-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--gold-soft);
+      margin-bottom: 10px;
+    }
+
+    .info-value {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #fff;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #cda22b, #f3df9b);
+      color: #17120a;
+      box-shadow: 0 12px 30px rgba(212,175,55,0.25);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(243,223,155,0.35);
+      color: var(--text);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .footer-note {
+      text-align: center;
+      color: var(--muted);
+      margin-top: 28px;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 640px) {
+      .hero { padding-top: 50px; }
+      .letter-inner { padding: 30px 20px; }
+      .letter-body { font-size: 1.22rem; }
+      .church { font-size: 1.7rem; }
+    }
+  </style>
 </head>
 <body>
+  <div class="stars"></div>
 
-<header class="topbar">
-  <div><strong>Prodiges Conférence 2026</strong></div>
-  <nav class="nav">
-    <a href="programme.html">Programme</a>
-    <a href="animations.html">Animations</a>
-    <a href="deroule.html">Déroulé</a>
-  </nav>
-</header>
+  <main class="container">
+    <section class="hero">
+      <div class="eyebrow">Invitation personnelle</div>
+      <h1>Conférence<br>Prodiges</h1>
+      <div class="theme">Destiné à briller</div>
+      <p class="subtitle">Du 22 au 26 avril 2026 · Cité Royale · Croissy-Beaubourg</p>
+    </section>
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>DESTINÉS À BRILLER</h1>
-    <p>22 – 25 avril 2026 • Format Camp-Ference</p>
-    <a href="programme.html" class="button">Découvrir le programme</a>
-  </div>
-</section>
+    <section class="letter-card">
+      <div class="letter-inner">
+        <div class="letter-header">
+          <h2 class="church">Église Jeune Prodiges</h2>
+          <p class="address">21 rue des Vieilles Vignes, 77183 Croissy-Beaubourg, France</p>
+          <p class="recipient">À l’attention du Pasteur Rémi Cristovao et de son épouse</p>
+          <p class="subject">Objet : Invitation à la Conférence Prodiges</p>
+        </div>
 
-<section class="section">
-  <h2>La vision</h2>
-  <div class="card">
-    Briller ne signifie pas chercher la lumière.
-    Briller, c’est révéler ce que Dieu a déjà déposé.
-    Pendant 4 jours, nous nous rassemblons pour nous équiper,
-    nous recharger et repartir impacter notre génération.
-  </div>
-</section>
+        <div class="letter-body">
+          <p>Pasteur,</p>
 
-<section class="section">
-  <h2>Le format Camp-Ference</h2>
-  <div class="card">
-    Une immersion complète : enseignements longs, forum,
-    animations, food court, et dynamique de camp.
-    L’église devient une salle de chargement spirituel.
-  </div>
-</section>
+          <p>C’est avec beaucoup de joie que je vous adresse cette invitation pour vous convier personnellement à Prodiges Conférence 2026, qui se tiendra du 22 au 26 avril 2026, à la Cité Royale, au 21 rue des vieilles vignes, 77183, à Croissy-Beaubourg.</p>
 
-<div class="footer">
-© Prodiges Conférence 2026 — Église Jeunes Prodiges
-</div>
+          <p>C’est la première édition, et nous sommes vraiment reconnaissants envers le Seigneur pour ce qu'il a commencé à faire et ce qu’il nous permet de mettre en place. Nous nous attendons vraiment à lui et croyons que nous passerons de temps fort dans sa présence et voir sa main à l'œuvre. </p>
 
+          <p>Je serais très heureux de pouvoir vous accueillir, vous et votre épouse, pour ces quelques jours, en tant que confrère dans le ministère et pilier reconnu dans l'œuvre que le seigneur a commencé à faire dans cette génération.</p>
+
+          <p>Je vous partage également le programme, joint à cette invitation, pour que vous puissiez en prendre connaissance.</p>
+
+          <p>Nous restons bien entendu disponibles pour vous accompagner dans l’organisation de votre venue si nécessaire.</p>
+
+          <p>Dans l’attente de vous lire, recevez, Pasteur, l’expression de ma considération en Christ.</p>
+
+          <div class="signature">
+            <strong>Samuel EMBOUMBOU</strong><br>
+            Berger Principal – Églises Jeunes Prodiges
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-grid">
+      <div class="info-card">
+        <div class="info-label">Dates</div>
+        <div class="info-value">Du 22 au 26 avril 2026</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Lieu</div>
+        <div class="info-value">Cité Royale<br>21 rue des Vieilles Vignes<br>77183 Croissy-Beaubourg</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Thème</div>
+        <div class="info-value">Destiné à briller</div>
+      </div>
+    </section>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="#">Voir le programme</a>
+    </div>
+
+    <p class="footer-note">blication.</p>
+  </main>
 </body>
 </html>
+
