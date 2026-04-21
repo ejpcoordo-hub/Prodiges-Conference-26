@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invitation – Prodiges Conférence 2026</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: linear-gradient(180deg, #0d0d18, #1a1333);
+      color: #f5f1e8;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(6px);
+    }
+
+    .poster {
+      width: 100%;
+      border-radius: 18px;
+      margin-bottom: 30px;
+      display: block;
+      object-fit: cover;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+      color: #f4d58d;
+      text-align: center;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 1rem;
+      margin-bottom: 30px;
+      color: #e8dcc2;
+    }
+
+    .letter-head {
+      line-height: 1.8;
+      margin-bottom: 30px;
+      color: #f7f2e8;
+    }
+
+    .object {
+      margin: 25px 0;
+      font-weight: bold;
+      color: #f4d58d;
+    }
+
+    .content p {
+      line-height: 1.9;
+      margin-bottom: 18px;
+      font-size: 1.06rem;
+    }
+
+    .signature {
+      margin-top: 40px;
+      line-height: 1.8;
+    }
+
+    .btn-wrap {
+      text-align: center;
+      margin: 35px 0 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #f4d58d;
+      color: #1a1333;
+      text-decoration: none;
+      padding: 14px 26px;
+      border-radius: 999px;
+      font-weight: bold;
+      transition: 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(244, 213, 141, 0.25);
+    }
+
+    .signature-name {
+      font-family: "Brush Script MT", cursive;
+      font-size: 2rem;
+      color: #f4d58d;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 700px) {
+      .card {
+        padding: 24px;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      .content p {
+        font-size: 1rem;
+      }
+
+      .signature-name {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+
+      <!-- AFFICHE -->
+      <img src="affiche-prodiges.jpg" alt="Affiche Prodiges Conférence 2026" class="poster" />
+
+      <h1>Prodiges Conférence 2026</h1>
+      <div class="subtitle">Invitation pastorale</div>
+
+      <div class="letter-head">
+        <strong>Église Jeunes Prodiges</strong><br />
+        21 rue des Vieilles Vignes<br />
+        77183 Croissy-Beaubourg, France<br /><br />
+
+        <strong>À l’attention du Pasteur Jonathan D. Monsheny et de son épouse</strong>
+      </div>
+
+      <div class="object">Objet : Invitation à Prodiges Conférence 2026</div>
+
+      <div class="content">
+        <p><strong>Pasteur Jonathan,</strong></p>
+
+        <p>
+          C’est avec beaucoup de joie que je vous adresse cette invitation afin de vous convier
+          personnellement à <strong>Prodiges Conférence 2026</strong>, qui se tiendra du
+          <strong>22 au 26 avril 2026</strong>, à la <strong>Cité Royale</strong>, située au
+          <strong>21 rue des Vieilles Vignes, 77183 Croissy-Beaubourg, France</strong>.
+        </p>
+
+        <p>
+          Il s’agit de la première édition de cette conférence, et nous sommes profondément reconnaissants
+          envers le Seigneur pour ce qu’Il a déjà commencé à faire et pour ce qu’Il nous permet de mettre
+          en place. Nous nous attendons à Lui avec foi, convaincus que nous vivrons des temps puissants
+          dans Sa présence et verrons Sa main agir au milieu de nous.
+        </p>
+
+        <p>
+          Je serais très heureux de pouvoir vous accueillir, vous et votre épouse, durant ces quelques jours,
+          en tant que confrère dans le ministère et pilier reconnu de l’œuvre que le Seigneur accomplit
+          dans cette génération.
+        </p>
+
+        <p>
+          Je vous transmets également le programme, joint à cette invitation, afin que vous puissiez en
+          prendre connaissance.
+        </p>
+
+        <p>
+          Nous restons bien entendu disponibles pour vous accompagner dans l’organisation de votre venue,
+          si nécessaire.
+        </p>
+      </div>
+
+      <div class="btn-wrap">
+        <a href="programme-prodiges.pdf" class="btn" download>Télécharger le programme</a>
+      </div>
+
+      <div class="signature">
+        <p>Fraternellement,</p>
+        <div class="signature-name">Samuel EBOUMBOU</div>
+        <p>Berger principal – Église Jeunes Prodiges</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
